@@ -213,6 +213,206 @@
             But if you're keen to contribute a little extra, we'd be very 
             grateful to any contributions to our honeymoon fund!
         </p>
+        <a href="#" class="btn" onclick="event.preventDefault(); window.location.assign('https://www.paypal.com/pool/9oka6sCcHv?sr=wccr');">
+            Make a contribution
+        </a>
+    </div>
+
+    <div class="footer"></div>
+
+    <script>
+        // Generate subtle sparkle stars
+        const container = document.getElementById('stars');
+        for (let i = 0; i < 30; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = (Math.random() * 5) + 's';
+            star.style.animationDuration = (3 + Math.random() * 3) + 's';
+            container.appendChild(star);
+        }
+    </script>
+</body>
+</html>        /* subtle decorative border frame */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 16px;
+            border: 1px solid var(--gold-mid);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* corner flourishes */
+        .corner {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border-color: var(--gold);
+            border-style: solid;
+            border-width: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .corner--tl { top: 12px; left: 12px; border-top-width: 2px; border-left-width: 2px; }
+        .corner--tr { top: 12px; right: 12px; border-top-width: 2px; border-right-width: 2px; }
+        .corner--bl { bottom: 12px; left: 12px; border-bottom-width: 2px; border-left-width: 2px; }
+        .corner--br { bottom: 12px; right: 12px; border-bottom-width: 2px; border-right-width: 2px; }
+
+        /* subtle star/sparkle background */
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.5; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 3;
+            animation: fadeUp 1.2s ease-out both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 1.4rem;
+            letter-spacing: 0.15em;
+            opacity: 0.7;
+            margin-bottom: 0.25rem;
+            animation: fadeUp 1.2s ease-out 0.15s both;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2.8rem, 8vw, 4.5rem);
+            letter-spacing: 0.08em;
+            line-height: 1.15;
+            margin-bottom: 0.2em;
+        }
+
+        .names span {
+            display: block;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold-mid);
+            margin: 1.8rem auto;
+            animation: fadeUp 1.2s ease-out 0.3s both;
+        }
+
+        .message {
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            line-height: 1.8;
+            max-width: 420px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.85;
+            animation: fadeUp 1.2s ease-out 0.45s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 1.2s ease-out 0.6s both;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--navy);
+        }
+
+        .btn:hover::before {
+            transform: scaleX(1);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.4;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="corner corner--tl"></div>
+    <div class="corner corner--tr"></div>
+    <div class="corner corner--bl"></div>
+    <div class="corner corner--br"></div>
+
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="names">
+            <span>Alex</span>
+            <div class="ampersand">&</div>
+            <span>Tommy</span>
+        </div>
+        <div class="divider"></div>
+        <p class="message">
+            Gifts aren't necessary, we're just happy to celebrate with you! 
+            But if you're keen to contribute a little extra, we'd be very 
+            grateful to any contributions to our honeymoon fund!
+        </p>
         <a href="https://www.paypal.com/pool/9oka6sCcHv?sr=wccr" class="btn">
             Make a contribution!
         </a>
